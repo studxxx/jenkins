@@ -1,6 +1,6 @@
 ---
 - name: Add authorized key
-  hosts: all
+  hosts: manager
   remote_user: root
   tasks:
     - name: Add user authorized key

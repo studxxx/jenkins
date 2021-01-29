@@ -4,6 +4,12 @@ server:
 authorize:
 	ansible-playbook -i hosts.yml authorize.yml
 
+authorize-agents:
+	ansible-playbook -i hosts.yml authorize-agents.yml
+
+generate-agent-key:
+	ssh-keygen -q -t rsa -N '' -f files/agent_rsa
+
 upgrade:
 	ansible-playbook -i hosts.yml upgrade.yml
 

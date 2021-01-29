@@ -7,3 +7,11 @@
     - docker
     - certbot
     - jenkins
+- name: Set Up Agent
+  hosts: agent
+  remote_user: root
+  roles:
+    - swap
+    - docker
+    - java
+    - agent
