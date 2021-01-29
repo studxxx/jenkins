@@ -9,7 +9,8 @@ services:
     depends_on:
     - jenkins
   jenkins:
-    image: jenkinsci/blueocean
+    build:
+      context: ./docker/development/jenkins
     volumes:
     - jenkins-data:/var/jenkins_home
     - docker-certs:/certs/client:ro
