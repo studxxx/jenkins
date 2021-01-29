@@ -1,0 +1,37 @@
+version: '3.9'
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
+    - 8000:8000
+    volumes:
+    - ./docker/development/nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+    - jenkins
+  jenkins:
+    build:
+      context: docker/common/jenkins
+    volumes:
+    - jenkins-data:/var/jenkins_home
+    - docker-certs:/certs/client:ro
+    depends_on:
+    - docker
+    environment:
+      DOCKER_HOST: tcp://2376
+      DOCKER_CERT_PATH: /certs/client
+      DOCKER_TLS_VERIFY: 1
+
+  docker:
+    image: docker:dind
+    privileged: true
+    environment:
+      DOCKER_TLS_CERDIR: /certs
+    volumes:
+    - jenkins-data:/var/jenkins_home
+    - docker-certs:/certs/client
+    - docker-data:/var/lib/docker
+
+volumes:
+  jenkins-data:
+  docker-certs:
+  docker-data:
