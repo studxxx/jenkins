@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this jenkins project will be documented in this file.
 
+## [0.1.1] - 2021-01-30
+### Added
+- certbot hook
+### Fixed
+- installing java jdk
+
 ## [0.1.0] - 2021-01-30
 ### Added
 - playbook for configuring server
