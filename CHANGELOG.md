@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this jenkins project will be documented in this file.
 
+## [0.1.0] - 2021-01-30
+### Added
+- playbook for configuring server
+- docker configs for deploying jenkins server
+
 ## [0.0.0] - 2021-01-29
 ### Added
 - README.md
