@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this jenkins project will be documented in this file.
 
+## [0.2.0] - 2021-01-31
+### Added
+- software to agent server
+  - make
+  - git
+
 ## [0.1.1] - 2021-01-30
 ### Added
 - certbot hook
